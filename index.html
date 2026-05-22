@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glamour Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+}
+
+body{
+background:#f7f8fc;
+color:#111;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+width:100%;
+padding:22px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,0.75);
+backdrop-filter:blur(20px);
+border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+.logo{
+font-size:30px;
+font-weight:800;
+background:linear-gradient(90deg,#6a5cff,#9b8cff);
+background-clip:text;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.nav-btn{
+text-decoration:none;
+background:#111;
+color:white;
+padding:14px 28px;
+border-radius:50px;
+font-weight:600;
+transition:0.3s;
+}
+
+.nav-btn:hover{
+transform:translateY(-3px);
+}
+
+/* HERO */
+
+.hero{
+padding:170px 7% 100px;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+gap:60px;
+min-height:100vh;
+}
+
+.hero-text h1{
+font-size:72px;
+line-height:1;
+font-weight:800;
+margin-bottom:25px;
+}
+
+.gradient{
+background:linear-gradient(90deg,#6a5cff,#a855f7);
+background-clip:text;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+font-size:20px;
+line-height:1.8;
+color:#555;
+margin-bottom:40px;
+max-width:650px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn1{
+background:#111;
+color:white;
+padding:18px 35px;
+border-radius:60px;
+text-decoration:none;
+font-weight:600;
+font-size:17px;
+transition:0.3s;
+}
+
+.btn2{
+background:white;
+border:1px solid #ddd;
+padding:18px 35px;
+border-radius:60px;
+text-decoration:none;
+color:#111;
+font-weight:600;
+font-size:17px;
+transition:0.3s;
+}
+
+.btn1:hover,
+.btn2:hover{
+transform:translateY(-4px);
+}
+
+/* HERO IMAGE */
+
+.hero-image{
+position:relative;
+}
+
+.hero-image img{
+width:100%;
+border-radius:35px;
+box-shadow:0 30px 80px rgba(0,0,0,0.12);
+}
+
+/* FLOATING CARDS */
+
+.float-card{
+position:absolute;
+background:white;
+padding:18px;
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,0.08);
+font-size:14px;
+font-weight:600;
+animation:float 4s ease-in-out infinite;
+}
+
+.card1{
+top:-20px;
+left:-20px;
+}
+
+.card2{
+bottom:-20px;
+right:-20px;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
+
+/* SECTIONS */
+
+section{
+padding:100px 7%;
+}
+
+.title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.title h2{
+font-size:55px;
+margin-bottom:15px;
+}
+
+.title p{
+color:#666;
+font-size:18px;
+}
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.feature-box{
+background:white;
+border-radius:30px;
+overflow:hidden;
+box-shadow:0 10px 40px rgba(0,0,0,0.06);
+transition:0.4s;
+}
+
+.feature-box:hover{
+transform:translateY(-10px);
+}
+
+.feature-box img{
+width:100%;
+height:370px;
+object-fit:cover;
+}
+
+.feature-content{
+padding:30px;
+}
+
+.feature-content h3{
+font-size:28px;
+margin-bottom:15px;
+}
+
+.feature-content p{
+line-height:1.8;
+color:#666;
+}
+
+/* VIDEO */
+
+.video-section{
+background:white;
+border-radius:40px;
+padding:30px;
+box-shadow:0 10px 50px rgba(0,0,0,0.06);
+}
+
+.video-section video{
+width:100%;
+border-radius:25px;
+}
+
+/* TELEGRAM CTA */
+
+.telegram{
+background:linear-gradient(135deg,#6a5cff,#8b5cf6);
+padding:90px 40px;
+border-radius:40px;
+text-align:center;
+color:white;
+}
+
+.telegram h2{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.telegram p{
+font-size:20px;
+max-width:700px;
+margin:auto;
+line-height:1.8;
+margin-bottom:35px;
+opacity:0.95;
+}
+
+.telegram a{
+display:inline-block;
+background:white;
+color:#111;
+padding:18px 40px;
+border-radius:60px;
+text-decoration:none;
+font-weight:700;
+}
+
+/* POPUP */
+
+.popup{
+position:fixed;
+bottom:25px;
+left:25px;
+background:white;
+padding:16px 22px;
+border-radius:18px;
+box-shadow:0 10px 40px rgba(0,0,0,0.12);
+font-size:14px;
+font-weight:600;
+z-index:1000;
+animation:slide 1s ease;
+}
+
+@keyframes slide{
+from{
+transform:translateY(50px);
+opacity:0;
+}
+to{
+transform:translateY(0);
+opacity:1;
+}
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+.hero{
+grid-template-columns:1fr;
+padding-top:140px;
+}
+
+.hero-text{
+text-align:center;
+}
+
+.hero-text h1{
+font-size:50px;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.title h2{
+font-size:40px;
+}
+
+.telegram h2{
+font-size:40px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+
+<div class="logo">
+GLAMOUR
+</div>
+
+<a href="https://t.me/+FJZ--RldqYw0YTQ0" class="nav-btn">
+Join Community
+</a>
+
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<div class="hero-text">
+
+<h1>
+Welcome To The Future Of <span class="gradient">Digital Lifestyle</span>
+</h1>
+
+<p>
+Glamour Hub is a modern digital lifestyle community for creators,
+trendsetters, and smart mobile users across Africa.
+Explore exclusive features, premium engagement experiences,
+and a fast-growing online community.
+</p>
+
+<div class="hero-buttons">
+
+<a href="https://t.me/+FJZ--RldqYw0YTQ0" class="btn1">
+Join Telegram
+</a>
+
+<a href="#features" class="btn2">
+Explore Features
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="hero.jpg">
+
+<div class="float-card card1">
+🔥 New members joining daily
+</div>
+
+<div class="float-card card2">
+✨ Premium digital community
+</div>
+
+</div>
+
+</div>
+
+<!-- FEATURES -->
+
+<section id="features">
+
+<div class="title">
+
+<h2>Explore Glamour Features</h2>
+
+<p>
+Modern experiences designed for the digital generation
+</p>
+
+</div>
+
+<div class="features">
+
+<!-- FEATURE -->
+
+<div class="feature-box">
+
+<img src="glam-lifestyle.jpg">
+
+<div class="feature-content">
+
+<h3>Glam Lifestyle</h3>
+
+<p>
+Showcase your lifestyle moments and become part of the Glamour experience.
+</p>
+
+</div>
+
+</div>
+
+<!-- FEATURE -->
+
+<div class="feature-box">
+
+<img src="glam-realtime.jpg">
+
+<div class="feature-content">
+
+<h3>Glam Realtime</h3>
+
+<p>
+Stay connected with trending activities and live engagement updates.
+</p>
+
+</div>
+
+</div>
+
+<!-- FEATURE -->
+
+<div class="feature-box">
+
+<img src="glam-facetime.jpg">
+
+<div class="feature-content">
+
+<h3>Glam FaceTime</h3>
+
+<p>
+Interactive experiences built for creators and online personalities.
+</p>
+
+</div>
+
+</div>
+
+<!-- FEATURE -->
+
+<div class="feature-box">
+
+<img src="glam-cuisine.jpg">
+
+<div class="feature-content">
+
+<h3>Glam Cuisine</h3>
+
+<p>
+Food, culture, and lifestyle content all inside one modern platform.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- VIDEO -->
+
+<section>
+
+<div class="title">
+
+<h2>Inside Glamour Hub</h2>
+
+<p>
+Watch the official community experience
+</p>
+
+</div>
+
+<div class="video-section">
+
+<video autoplay muted loop controls>
+<source src="glamour.mp4" type="video/mp4">
+</video>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+
+<section>
+
+<div class="telegram">
+
+<h2>Join The Glamour Community ✨</h2>
+
+<p>
+Connect with thousands of mobile users and creators
+inside the official Telegram community.
+</p>
+
+<a href="https://t.me/+FJZ--RldqYw0YTQ0">
+Join Now
+</a>
+
+</div>
+
+</section>
+
+<!-- POPUP -->
+
+<div class="popup" id="popup">
+✨ Esther from Lagos just joined Glamour Hub
+</div>
+
+<script>
+
+const messages = [
+
+"🔥 Michael from Abuja joined the community",
+"✨ Esther from Lagos just joined Glamour Hub",
+"🚀 New member joined from Ghana",
+"💎 Chioma unlocked Glam Lifestyle",
+"✨ David joined the Telegram community"
+
+];
+
+let count = 0;
+
+setInterval(()=>{
+
+count++;
+
+if(count >= messages.length){
+count = 0;
+}
+
+document.getElementById("popup").innerHTML = messages[count];
+
+},4000);
+
+</script>
+
+</body>
+</html>
